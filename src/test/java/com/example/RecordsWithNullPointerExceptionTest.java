@@ -9,14 +9,14 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RecordsWithNullPointerExceptionTest {
 
     @Test
-    public void testRecord() {
+    public void record() {
         Student student = new Student("James", "Gosling");
         Training training = new Training("Core Java", List.of(student));
         assertEquals("Gosling", training.studentList().get(0).lastName());
     }
 
     @Test
-    public void testNullPointerExceptionForStudentList() {
+    public void nullPointerExceptionForStudentList() {
         Training training = new Training("Core Java", null);
 
         Exception expectedException = assertThrows(NullPointerException.class, () ->
@@ -26,7 +26,7 @@ public class RecordsWithNullPointerExceptionTest {
     }
 
     @Test
-    public void testNullPointerExceptionForTraining() {
+    public void nullPointerExceptionForTraining() {
         Training nullTraining = null;
 
         Exception expectedException = assertThrows(NullPointerException.class, () ->
