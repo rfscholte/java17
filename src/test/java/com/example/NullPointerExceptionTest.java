@@ -13,7 +13,9 @@ public class NullPointerExceptionTest {
         Exception expectedException = assertThrows(NullPointerException.class, () ->
                 training.studentList().get(0).lastName()
         );
-        assertEquals("Cannot invoke \"java.util.List.get(int)\" because the return value of \"com.example.Training.studentList()\" is null", expectedException.getMessage());
+        String expectedExceptionMessage = """
+                Cannot invoke "java.util.List.get(int)" because the return value of "com.example.Training.studentList()" is null""";
+        assertEquals(expectedExceptionMessage, expectedException.getMessage());
     }
 
     @Test
@@ -23,6 +25,8 @@ public class NullPointerExceptionTest {
         Exception expectedException = assertThrows(NullPointerException.class, () ->
                 nullTraining.studentList().get(0).lastName()
         );
-        assertEquals("Cannot invoke \"com.example.Training.studentList()\" because \"nullTraining\" is null", expectedException.getMessage());
+        String expectedExceptionMessage = """
+                Cannot invoke "com.example.Training.studentList()" because "nullTraining" is null""";
+        assertEquals(expectedExceptionMessage, expectedException.getMessage());
     }
 }
