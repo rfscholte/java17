@@ -1,13 +1,21 @@
 package com.example;
 
 public class PatternMatching {
-    public static String retrieveDirection(String directionAbbreviation) {
-        return switch (directionAbbreviation) {
-            case "N" -> "North";
-            case "E" -> "East";
-            case "S" -> "South";
-            case "W" -> "West";
-            default -> "Unknown direction";
+    
+    sealed interface CardClassification permits Suit, Tarot {}
+    enum Suit implements CardClassification { CLUBS, DIAMONDS, HEARTS, SPADES }
+    static final class Tarot implements CardClassification {}
+    
+    
+    static String describeCard(CardClassification c) {
+        return switch (c) {
+            case Suit s when s == Suit.CLUBS ->     "It's clubs"; // notice the 'when'
+            case Suit.DIAMONDS ->                   { String d = "diamonds";
+                                                      yield "It's " + d; }
+            case Suit.HEARTS ->                     "It's hearts";
+            case Suit s ->                          "It's spades"; // all others
+            case Tarot t ->                         "It's a tarot";
+            case null ->                            "You idiot";
         };
     }
 }

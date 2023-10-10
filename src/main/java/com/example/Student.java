@@ -1,3 +1,10 @@
 package com.example;
 
-public record Student(String firstName, String lastName) {}
+import java.util.Locale;
+
+public record Student(String firstName, String lastName) {
+    
+    public String toString() {
+        return lastName.toUpperCase( Locale.ENGLISH ) + ", " + firstName;
+    }
+}
