@@ -3,7 +3,7 @@ package com.example;
 public class PatternMatching {
     
     sealed interface CardClassification permits Suit, Tarot {}
-    enum Suit implements CardClassification { CLUBS, DIAMONDS, HEARTS, SPADES }
+    enum Suit implements CardClassification { CLUBS, DIAMONDS, HEARTS, SPADES/*, JOKER */ }
     static final class Tarot implements CardClassification {}
     
     
@@ -13,7 +13,7 @@ public class PatternMatching {
             case Suit.DIAMONDS ->                   { String d = "diamonds";
                                                       yield "It's " + d; }
             case Suit.HEARTS ->                     "It's hearts";
-            case Suit s ->                          "It's spades"; // all others
+            case Suit s ->                          "It's spades"; // all others, like default, BAD!!
             case Tarot t ->                         "It's a tarot";
             case null ->                            "You idiot";
         };

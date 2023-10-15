@@ -28,6 +28,7 @@ public class PatternMatchingTest {
             arguments(Suit.DIAMONDS, "It's diamonds"),
             arguments(Suit.HEARTS, "It's hearts"),
             arguments(Suit.SPADES, "It's spades"),
+//            arguments(Suit.JOKER, "It's the joker"),
             arguments(new Tarot(), "It's a tarot"),
             arguments(null, "You idiot" )
          );
@@ -50,7 +51,8 @@ public class PatternMatchingTest {
     static Stream<Arguments> studentName() {
         // String letter, String direction
         return Stream.of(
-            arguments(new Student( "Patrick", "Jane" ))
+            arguments(new Student( "Patrick", "Jane" )),
+            arguments(new Object())
          );
     }
 }
