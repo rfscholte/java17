@@ -48,10 +48,14 @@
       <plugins>
           <plugin>
               <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-compiler-plugin</artifactId>
+              <artifactId>maven-javadoc-plugin</artifactId>
+              <version>3.6.0</version>
               <configuration>
-                  <source>21</source>
-                  <target>21</target>
+                <debug>true</debug>
+                <additionalOptions>
+                  <option>--snippet-path</option>
+                  <option>${project.build.outputDirectory}</option>
+                </additionalOptions>
               </configuration>
           </plugin>
       </plugins>
