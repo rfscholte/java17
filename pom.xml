@@ -54,7 +54,7 @@
                 <debug>true</debug>
                 <additionalOptions>
                   <option>--snippet-path</option>
-                  <option>${project.build.outputDirectory}</option>
+                  <option>${project.basedir}/src/main/resources</option>
                 </additionalOptions>
               </configuration>
           </plugin>
