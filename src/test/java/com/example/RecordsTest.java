@@ -20,6 +20,10 @@ public class RecordsTest {
     @Test
     public void immutable() {
         Training training = new Training( "twilight", new ArrayList<>() );
-        assertThrows( UnsupportedOperationException.class, () -> training.studentList().add( new Student("Hi", "Jack") ) );
+        assertEquals(0, training.studentList().size());
+        assertThrows( UnsupportedOperationException.class, () ->
+                training.studentList().add( new Student("Hi", "Jack") )
+        );
+        assertEquals(0, training.studentList().size());
     }
 }
