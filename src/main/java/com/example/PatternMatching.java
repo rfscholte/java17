@@ -1,12 +1,7 @@
 package com.example;
 
 public class PatternMatching {
-    
-    sealed interface CardClassification permits Suit, Tarot {}
-    enum Suit implements CardClassification { CLUBS, DIAMONDS, HEARTS, SPADES/*, JOKER */ }
-    static final class Tarot implements CardClassification {}
-    
-    
+
     static String describeCard(CardClassification c) {
         return switch (c) {
             case Suit s when s == Suit.CLUBS ->     "It's clubs"; // notice the 'when'

@@ -4,10 +4,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import com.example.PatternMatching.CardClassification;
-import com.example.PatternMatching.Suit;
-import com.example.PatternMatching.Tarot;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
