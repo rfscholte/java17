@@ -45,7 +45,6 @@ public class PatternMatchingTest {
     }
     
     static Stream<Arguments> studentName() {
-        // String letter, String direction
         return Stream.of(
             arguments(new Student( "Patrick", "Jane" )),
             arguments(new Object())
